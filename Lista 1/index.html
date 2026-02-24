@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Document</title>
+    <script>
+      vetAges = [10, 21, 31, 40];
+
+      const formatVetAges = vet => {
+
+          var textAges = "";
+          for (let i = 0; i < vetAges.length; i++) {
+              if (i == 0) {
+                  textAges += ` ${vet[i]}`
+                } else {
+                    textAges += `, ${vet[i]}`
+                }
+            }
+            return textAges;
+        }
+    document.write(`<p>Idades informadas: ${formatVetAges(vetAges)}</p>`);
+      // Atividade 1
+      sumAges = (vet) => {
+        sum = 0;
+        for (i = 0; i < vet.length; i++) sum += vet[i];
+        return sum;
+      };
+      document.write(`<p>Soma das idades = ${sumAges(vetAges)}</p>`);
+
+      // Atividade 2
+      // Item a)
+      const averageAges = (vet) => (average = sumAges(vet) / vet.length);
+      document.write(`<p>Média das idades = ${averageAges(vetAges)}</p>`);
+
+      // Item b)
+      const oldestAge = (vet) => {
+        var oldest = vet[0];
+        for (i = 0; i < vet.length; i++) {
+          if (vet[i] > oldest) oldest = vet[i];
+        }
+        return oldest;
+      };
+      document.write(`<p>Maior idade = ${oldestAge(vetAges)}</p>`);
+
+      // Item c)
+      const oddAges = (vet) => {
+        const oddVet = [];
+        for (i = 0; i < vet.length; i++) {
+          if (vet[i] % 2 == 1) oddVet.push(vet[i]);
+        }
+        document.write(`<p>Idades ímpares: ${formatVetAges(vetAges)}</p>`);
+
+      };
+
+      //Item d)
+      const majority = (vet) => {
+        for (let i = 0; i < vet.length; i++) {
+          if (vet[i] < 18) return false;
+        }
+        return true;
+      };
+      majority(vetAges)
+        ? document.write(`<p>Todos são maiores de idade!</p>`)
+        : document.write(`<p>Uma ou mais pessoas são menores de idade.</p>`);
+
+      //Item e)
+      const aboveAgeComparison = (vet, item) => {
+        const olderAges = [];
+        const age = prompt(`Informe uma idade mínima, ${item}`);
+        for (let i = 0; i < vet.length; i++) {
+          if (vet[i] >= age) olderAges.push(vet[i]);
+        }
+        return olderAges;
+      };
+      aboveAgeComparison(vetAges, 1).length > 0
+        ? document.write(`<p>Todos são mais velhos que a idade informada!</p>`)
+        : document.write(
+            `<p>Uma ou mais pessoas são menores que a idade informada.</p>`
+          );
+
+      //Item f)
+      const printaboveAges = (vet) => {
+        const newVet = aboveAgeComparison(vet, 2);
+        if (newVet.length > 0) {
+          document.write(`<p>Idades maiores que a informada:</p>`);
+          for (let i = 0; i < newVet.length; i++) {
+            document.write(`<p>${newVet[i]}</p>`);
+          }
+        } else {
+          document.write(`<p>Nenhuma das idades é maior que a informada.</p>`);
+        }
+      };
+      printaboveAges(vetAges);
+
+      //Item g)
+      const averageAboveAge = (vet) => {
+        const newVet = aboveAgeComparison(vet, 3);
+        if (newVet.length > 0) {
+          return averageAges(newVet);
+        } else return -1;
+      };
+      document.write(
+        `<p>Média das idades acima da idade informada = ${averageAges(
+          vetAges
+        )}</p>`
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

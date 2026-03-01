@@ -25,11 +25,12 @@ elemMaiorSalario.innerHTML += `${usuarioMaiorSalario.nome}, com ${usuarioMaiorSa
 
 const elemMulherGanhaMuito = document.getElementById("salarioMulher");
 
-const mulherGanhaMuito = usersTable.some((user) => user.salario = 5000);
+const mulherGanhaMuito = usersTable.some((user) => user.sexo === "F" && user.salario >= 5000);
 elemMulherGanhaMuito.innerHTML = mulherGanhaMuito ? "Pelo menos uma mulher ganha mais de R$5000,00." : "Nenhuma mulher ganha mais de R$5000,00.";
 
 const elemMediaSalariosHomens = document.getElementById("salarioMedioHomens");
 const elemMediaSalariosMulheres = document.getElementById("salarioMedioMulheres");
+
 const somaSalarioGeral = usersTable.reduce((acc, user) => {
     if (user.sexo === "M") {
         acc.homens.soma += user.salario;
@@ -51,9 +52,9 @@ const somaSalarioGeral = usersTable.reduce((acc, user) => {
 });
 
 const medias = {
-    mediaHomens: somaSalarioGeral.homens.soma / somaSalarioGeral.homens.quantidade,
-    mediaMulheres: somaSalarioGeral.mulheres.soma / somaSalarioGeral.mulheres.quantidade
+    homens: somaSalarioGeral.homens.soma / somaSalarioGeral.homens.quantidade,
+    mulheres: somaSalarioGeral.mulheres.soma / somaSalarioGeral.mulheres.quantidade
 }
 
-elemMediaSalariosHomens.innerHTML = `Dos homens: R$${medias.mediaHomens.toFixed(2)}.`;
-elemMediaSalariosMulheres.innerHTML = `Das mulheres: R$${medias.mediaMulheres.toFixed(2)}.`;
+elemMediaSalariosHomens.innerHTML = `Dos homens: R$${medias.homens.toFixed(2)}.`;
+elemMediaSalariosMulheres.innerHTML = `Das mulheres: R$${medias.mulheres.toFixed(2)}.`;

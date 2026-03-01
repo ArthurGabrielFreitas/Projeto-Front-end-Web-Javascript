@@ -6,7 +6,7 @@ elemMaiores.innerHTML = `Maiores de idade: `;
 const maioresDeIdade = usersTable.filter((user) => user.idade >= 18);
 maioresDeIdade.forEach((user, i, vet) => {
     elemMaiores.innerHTML += `${user.nome} - ${user.idade}`;
-    i < vet.length ? elemMaiores.innerHTML += `, ` : elemMaiores.innerHTML += `</p>`;
+    elemMaiores.innerHTML += i < vet.length - 1 ? `, ` : `.`;
 });
 
 const elemSexoMasculino = document.getElementById("sexoMasculino");
@@ -21,15 +21,39 @@ const elemMaiorSalario = document.getElementById("maiorSalario");
 elemMaiorSalario.innerHTML = "A pessoa com maior salário é ";
 
 const usuarioMaiorSalario = usersTable.reduce((maior, atual) => atual.salario > maior.salario ? atual : maior);
-elemMaiorSalario.innerHTML += `${usuarioMaiorSalario.nome}, com ${usuarioMaiorSalario.idade} anos, do sexo ${usuarioMaiorSalario.sexo === "F" ? "feminino" : "masculino"} e recebe R$${usuarioMaiorSalario.salario} por mês!`;
+elemMaiorSalario.innerHTML += `${usuarioMaiorSalario.nome}, com ${usuarioMaiorSalario.idade} anos, do sexo ${usuarioMaiorSalario.sexo === "F" ? "feminino" : "masculino"} e recebe R$${usuarioMaiorSalario.salario.toFixed(2)} por mês!`;
 
 const elemMulherGanhaMuito = document.getElementById("salarioMulher");
 
-const mulherGanhaMuito = usersTable.some((user) => user.salario = 5000 );
-mulherGanhaMuito ? elemMulherGanhaMuito.innerHTML = "Pelo menos uma mulher ganha mais de R$5000,00." : elemMulherGanhaMuito.innerHTML = "Nenhuma mulher ganha mais de R$5000,00.";
+const mulherGanhaMuito = usersTable.some((user) => user.salario = 5000);
+elemMulherGanhaMuito.innerHTML = mulherGanhaMuito ? "Pelo menos uma mulher ganha mais de R$5000,00." : "Nenhuma mulher ganha mais de R$5000,00.";
 
-const elemMediaSalarios = document.getElementById("mediaSalarios");
-const salarioHomens = usersTable.reduce((acc, user) => user.sexo === "M"? acc + user : acc, 0);
-const salarioMulheres = usersTable.reduce((acc, user) => user.sexo === "F"? acc + user : acc, 0);
+const elemMediaSalariosHomens = document.getElementById("salarioMedioHomens");
+const elemMediaSalariosMulheres = document.getElementById("salarioMedioMulheres");
+const somaSalarioGeral = usersTable.reduce((acc, user) => {
+    if (user.sexo === "M") {
+        acc.homens.soma += user.salario;
+        acc.homens.quantidade++;
+    } else {
+        acc.mulheres.soma += user.salario;
+        acc.mulheres.quantidade++;
+    }
+    return acc;
+}, {
+    homens: {
+        soma: 0,
+        quantidade: 0
+    },
+    mulheres: {
+        soma: 0,
+        quantidade: 0
+    }
+});
 
-elemMediaSalarios.innerHTML = ``;
+const medias = {
+    mediaHomens: somaSalarioGeral.homens.soma / somaSalarioGeral.homens.quantidade,
+    mediaMulheres: somaSalarioGeral.mulheres.soma / somaSalarioGeral.mulheres.quantidade
+}
+
+elemMediaSalariosHomens.innerHTML = `Dos homens: R$${medias.mediaHomens.toFixed(2)}.`;
+elemMediaSalariosMulheres.innerHTML = `Das mulheres: R$${medias.mediaMulheres.toFixed(2)}.`;

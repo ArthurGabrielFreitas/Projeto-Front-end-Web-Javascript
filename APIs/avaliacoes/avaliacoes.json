@@ -1,0 +1,29 @@
+{
+  "clientes": [
+    {
+      "nome": "Mariana Souza",
+      "depoimento": "Produto excelente! Superou minhas expectativas em qualidade e entrega.",
+      "rating": 5
+    },
+    {
+      "nome": "Carlos Henrique Lima",
+      "depoimento": "Muito bom, mas poderia ter um preço mais acessível.",
+      "rating": 4
+    },
+    {
+      "nome": "Fernanda Alves",
+      "depoimento": "Gostei bastante, funciona como prometido.",
+      "rating": 4
+    },
+    {
+      "nome": "Rafael Oliveira",
+      "depoimento": "Produto razoável, atende o básico, mas esperava mais.",
+      "rating": 3
+    },
+    {
+      "nome": "Juliana Martins",
+      "depoimento": "Não fiquei satisfeita, tive problemas com a durabilidade.",
+      "rating": 2
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .cliente {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Depoimentos de Clientes</h1>
+  <div id="lista-clientes"></div>
+
+  <script>
+    async function carregarClientes() {
+      try {
+        // Ajuste o caminho se necessário (ex: './clientes.json')
+        const resposta = await fetch('../APIs/avaliacoes/avaliacoes.json');
+        const dados = await resposta.json();
+
+        const container = document.getElementById('lista-clientes');
+
+        // Usando map() para gerar HTML
+        container.innerHTML = dados.clientes.map(cliente => `
+          <div class="cliente">
+            <h3>${cliente.nome}</h3>
+            <p>${cliente.depoimento}</p>
+            <strong>Nota: ${cliente.rating}/5</strong>
+          </div>
+        `).join('');
+
+      } catch (erro) {
+        console.error('Erro ao carregar os clientes:', erro);
+      }
+    }
+
+    carregarClientes();
+  </script>
+
+</body>
+</html>

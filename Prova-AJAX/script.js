@@ -9,8 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        console.log(username, password)
-
         comparaInputPassword(username, password)
             .then(senhaCorreta => {
                 if (senhaCorreta)
@@ -55,7 +53,7 @@ const comparaInputPassword = async (usernameInput, passwordInput) => {
             console.log("senhas iguais");
             return true;
         } else {
-            console.log("senhas diferentes", passwordInput, usuario.password);
+            console.log("senhas diferentes");
             return false;
         }
     } else {

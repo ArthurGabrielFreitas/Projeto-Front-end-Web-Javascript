@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    width: 90%;
+}
+
+input[type="submit"] {
+    background-color: rgb(23, 23, 158);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Mudança de cor do botão ao passar o mouse */
+input[type="submit"]:hover {
+    background-color: rgb(56, 56, 153);
+}

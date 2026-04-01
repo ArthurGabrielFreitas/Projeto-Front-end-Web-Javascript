@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineTop · Os Mais Populares</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ 
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">Cine<span>Top</span></div>
+      <p class="subtitle">Os 10 mais populares agora</p>
+    </div>
+    <div id="status-bar"><span class="dot"></span>Carregando dados…</div>
+  </div>
+</header>
+ 
+<main>
+  <div id="grid"></div>
+  <div id="error-msg">
+    <h2>Algo deu errado</h2>
+    <p>Não foi possível carregar os filmes.<br>Verifique se o token da API está correto no código.</p>
+    <code>const API_TOKEN = 'SEU_TOKEN_AQUI';</code>
+  </div>
+</main>
+ 
+<footer>
+  Dados por <span>The Movie Database (TMDB)</span> · Projeto Educacional
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>

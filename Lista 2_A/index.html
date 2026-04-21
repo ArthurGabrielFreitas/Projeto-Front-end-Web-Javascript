@@ -4,51 +4,6 @@
 <head>
   <title>Document</title>
   <script>
-    vetAges = [10, 21, 31, 40];
-
-    // Item a)
-    const soma = vetAges.reduce((acumulador, valorAtual) => acumulador + valorAtual);
-    document.write(`<p>Soma das idades: ${soma}</p>`);
-
-    // Item b)
-    const media = soma / vetAges.length;
-    document.write(`<p>Média aritmética simples das idades: ${media}</p>`);
-
-    // Item c)
-    const maiorIdade = vetAges.reduce((maior, valorAtual) => valorAtual > maior ? valorAtual : maior);
-    document.write(`<p>Maior idade: ${maiorIdade}</p>`);
-
-    // Item d)
-    const idadesImpares = vetAges.filter(idade => idade % 2 === 1);
-    function formatVetAges(vet) {
-      return vet.join(', ');
-    }
-    document.write(`<p>Idades ímpares: ${formatVetAges(idadesImpares)}</p>`);
-
-    // Item e)
-    const todosMaioresDeIdade = vetAges.every(idade => idade >= 18);
-    todosMaioresDeIdade ? document.write(`<p>Todos são maiores de idade!</p>`) : document.write(`<p>Uma ou mais pessoas são menores de idade.</p>`);
-
-    // Item f)
-    const idadeMinima = prompt("Informe uma idade mínima para os itens f), g) e h):");
-    const acimaDaIdadeMinima = vetAges.every(idade => idade >= idadeMinima);
-    acimaDaIdadeMinima ? document.write(`<p>Todos são mais velhos que a idade informada!</p>`) : document.write(`<p>Uma ou mais pessoas são menores que a idade informada.</p>`);
-
-    // Item g)
-    const idadesAcimaDaMinima = vetAges.filter(idade => idade >= idadeMinima);
-    if (idadesAcimaDaMinima.length > 0) {
-      document.write(`<p>Idades maiores que a informada: ${formatVetAges(idadesAcimaDaMinima)}</p>`);
-    } else {
-      document.write(`<p>Nenhuma das idades é maior que a informada.</p>`);
-    }
-
-    // Item h)
-    if (idadesAcimaDaMinima.length > 0) {
-      const mediaIdadeAcimaDaMinima = idadesAcimaDaMinima.reduce((acumulador, valorAtual) => acumulador + valorAtual) / idadesAcimaDaMinima.length;
-      document.write(`<p>Média das idades acima da idade informada: ${mediaIdadeAcimaDaMinima}</p>`);
-    } else {
-      document.write(`<p>Nenhuma das idades é maior que a informada.</p>`);
-    }
   </script>
 </head>
 

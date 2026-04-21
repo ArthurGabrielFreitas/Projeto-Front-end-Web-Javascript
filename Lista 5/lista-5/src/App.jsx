@@ -1,5 +1,6 @@
 import Secao from "./components/Secao";
 import CardIFTM from './components/CardIFTM';
+import CardGrid from './components/CardGrid'
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
         subtitulo="Veja dados de transparência e governança"
       />
       <CardIFTM texto="Plano de Desenvolvimento Institucional"/>
+      <CardGrid />
     </div>
   )
 }

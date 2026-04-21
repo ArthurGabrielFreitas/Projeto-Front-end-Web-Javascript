@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
 }
 
 .secao {
@@ -10,6 +9,7 @@
   padding: 40px 20px;
   background-color: #fff;
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 .secao h2 {
@@ -52,4 +52,44 @@
 
 .cardundefined:hover {
   background-color: rgba(19, 81, 180, 0.16);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 20px;
+  font-family: revert;
+  margin: 0 auto;
+  max-width: 85vw;
+}
+
+.card-item {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.card-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-item p {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

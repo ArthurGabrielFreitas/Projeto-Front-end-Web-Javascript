@@ -3,9 +3,12 @@ import CardIFTM from './components/CardIFTM';
 
 export default function App() {
   return (
-    <Secao
-      titulo="Acesso à Informação"
-      subtitulo="Veja dados de transparência e governança"
-    />
+    <div>
+      <Secao
+        titulo="Acesso à Informação"
+        subtitulo="Veja dados de transparência e governança"
+      />
+      <CardIFTM texto="Plano de Desenvolvimento Institucional"/>
+    </div>
   )
 }

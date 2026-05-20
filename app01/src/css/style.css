@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+header,
+main,
+footer {
+  border: 1px solid black;
+  padding: 20px 0;
+}
+
+section {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+header {
+  background-color: antiquewhite;
+}
+
+main {
+  background-color: rgb(130, 215, 241);
+}
+
+footer {
+  background-color: darkcyan;
+}

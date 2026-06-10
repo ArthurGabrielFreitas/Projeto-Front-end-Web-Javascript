@@ -32,7 +32,7 @@ function Formulario() {
         from_msg: form.msg
       };
       
-      emailjs.send('service_bs51g31', 'template_ivlds75', templateParams, 'PsBTHZHTU9WuU9pot').then(
+      emailjs.send('servico', 'template', templateParams, 'api_key').then(
         (response) => {
           setMsgErro("Email enviado com sucesso");
         },

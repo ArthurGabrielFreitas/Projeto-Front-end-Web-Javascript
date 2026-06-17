@@ -103,8 +103,8 @@ function Home() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis hic ab veritatis vero ducimus pariatur. Veniam beatae consequuntur rerum architecto magnam. Veniam, iure doloribus. Repudiandae rem aut mollitia aliquam.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perferendis hic ab veritatis vero ducimus pariatur. Veniam beatae consequuntur rerum architecto magnam. Veniam, iure doloribus. Repudiandae rem aut mollitia aliquam.
             </p>
-        <Animacao css_identifier='paragrafo1' delayClasse={1000} />
-        <Animacao css_identifier='paragrafo8' delayClasse={5000} />
+        <Animacao css_identifier='paragrafo1' delayAttr={1000} rotation={180} rotateAxis="x" duration={5000} />
+        <Animacao css_identifier='paragrafo8' delayAttr={5000} rotation={180} rotateAxis="y" duration={3000} />
     </>
   )
 }
